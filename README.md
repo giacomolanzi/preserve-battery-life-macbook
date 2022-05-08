@@ -9,6 +9,22 @@ Then I realized this simple and useful script that rtuns every 5 minutes to chec
 
 1. Plug the smart socket in and configure it
 2. Write down the socket IP
-3. Place the `script.sh inside the `/Users/<username>/.bin` folder
-4. Edit the `script.sh` in order to match your BSSID (WiFi name) and socket's IP address
-5. Plase the `autoBatteryCharging.plis` file inside the following folder `/Users/giacomolanzi/Library/LaunchAgents/`
+3. Download the files
+4. Edit `script.sh`
+  * Line 14 and 15: insert the IP address of the smart plug
+  * In line 19: Insert the BSSID of your WiFi
+5. Edit `autoBatteryCharging.plis`
+  * Line 9: Insert your username instead of `<username>`
+  * Optional in line 12: change the interval of the script. Default is setting for 5 minutes (300 sec.)
+6. Execute the following commands in terminal
+
+```bash
+mkdir /User/<username>/.bin
+cp script.sh /User/<username>/.bin
+cp autoBatteryCharging.plis /Users/<usernmae>/Library/LaunchAgents/
+```
+
+Now your Mac will check every 5 minutes your WiFi, battery level and Backup status. The script will send command to the smart plug only if the WiFi is the one you have selected AND there is not backup running. 
+It will check the battery level and switch on the plug under 15% as well switch it off at 92%.
+
+Enjoy!
