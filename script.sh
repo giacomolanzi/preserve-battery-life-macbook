@@ -11,12 +11,12 @@ bssid=$(networksetup -getairportnetwork en0 | cut -c 24-)
 tmutil_phase=$(tmutil currentphase)
 
 # Set variable for poweroutlet command
-power_on=http://192.168.178.21/cm\?cmnd\=Power%20on
-power_off=http://192.168.178.21/cm\?cmnd\=Power%20off
+power_on=http://<socket IP>/cm\?cmnd\=Power%20on
+power_off=http://<socket IP>/cm\?cmnd\=Power%20off
 
 # Actual script
 
-if [[ "$bssid" == "Vodafone-C7CC" && "$tmutil_phase" == "BackupNotRunning" ]]; then
+if [[ "$bssid" == "<your wifi bssid>" && "$tmutil_phase" == "BackupNotRunning" ]]; then
         if (( $battery >= 92 )); then
                 curl -qs --url $power_off
         elif (( $battery <= 15 )); then
