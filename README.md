@@ -1,4 +1,4 @@
-# Preserve Battery Life Macbook with Tasmota power Outlet
+# Preserve Battery Life MacBook with Tasmota power Outlet
 
 I use my MacBook Pro as main computer and I love it, but I am lazy too and often forgot to detach the power cable when battery is reasonably full.
 Then I realized this simple and useful script that rtuns every 5 minutes to check the level battery and switch of the smart plug in case charging is not needed.
