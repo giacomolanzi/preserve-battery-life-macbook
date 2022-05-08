@@ -1,4 +1,4 @@
-#!/bin/zsh
+#!/bin/bash
 
 # Set variables for battery
 battery=$(pmset -g ps | egrep -o "(\d+)%" | egrep -o "\d+")
